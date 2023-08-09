@@ -13,12 +13,6 @@ public class TaskController {
 
     private List<Task> tasks = new ArrayList<>();
 
-    public TaskController() {
-        tasks.add(new Task(1L, "Task 1", "Description 1", "To Do"));
-        tasks.add(new Task(2L, "Task 2", "Description 2", "In Progress"));
-        tasks.add(new Task(3L, "Task 3", "Description 3", "Done"));
-    }
-
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("tasksToDo", getTasksByStatus("To Do"));
