@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div class="board">
+    <div class="column" id="tasksToDo">
+        <h2>To Do</h2>
+        <div class="task-list">
+            <div th:each="task : ${tasksToDo}" class="task" th:id="'task-' + ${task.id}" draggable="true">
+                <h3 th:text="${task.title}"></h3>
+                <p th:text="${task.description}"></p>
+            </div>
+            <div th:each="task : ${tasksToDo}" class="task" th:id="'task-' + ${task.id}" draggable="true">
+                <h3 th:text="${task.title}"></h3>
+                <p th:text="${task.description}"></p>
+            </div>
+            <div th:each="task : ${tasksToDo}" class="task" th:id="'task-' + ${task.id}" draggable="true">
+                <h3 th:text="${task.title}"></h3>
+                <p th:text="${task.description}"></p>
+            </div>
+            <div th:each="task : ${tasksToDo}" class="task" th:id="'task-' + ${task.id}" draggable="true">
+                <h3 th:text="${task.title}"></h3>
+                <p th:text="${task.description}"></p>
+            </div>
+        </div>
+    </div>
+    <div class="column" id="tasksInProgress">
+        <h2>In Progress</h2>
+        <div class="task-list">
+            <div th:each="task : ${tasksInProgress}" class="task" th:id="'task-' + ${task.id}" draggable="true">
+                <h3 th:text="${task.title}"></h3>
+                <p th:text="${task.description}"></p>
+            </div>
+        </div>
+    </div>
+    <div class="column" id="tasksDone">
+        <h2>Done</h2>
+        <div class="task-list">
+            <div th:each="task : ${tasksDone}" class="task" th:id="'task-' + ${task.id}" draggable="true">
+                <h3 th:text="${task.title}"></h3>
+                <p th:text="${task.description}"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/main.js"></script>
+</body>
+</html>
